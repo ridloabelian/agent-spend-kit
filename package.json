@@ -1,0 +1,29 @@
+{
+  "name": "agent-spend-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted budget controller, virtual-card policy engine, and receipt ledger for autonomous AI agents",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "dev:server": "npm run dev -w @agent-spend-kit/server",
+    "dev:dashboard": "npm run dev -w @agent-spend-kit/dashboard",
+    "build": "npm run build -w @agent-spend-kit/sdk && npm run build -w @agent-spend-kit/server && npm run build -w @agent-spend-kit/dashboard",
+    "start": "node packages/server/dist/index.js",
+    "typecheck": "npm run typecheck -w @agent-spend-kit/sdk && npm run typecheck -w @agent-spend-kit/server && npm run typecheck -w @agent-spend-kit/dashboard && tsc --noEmit -p tsconfig.check.json",
+    "test": "vitest run",
+    "simulate": "tsx scripts/simulate.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.2",
+    "vitest": "^5.1.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

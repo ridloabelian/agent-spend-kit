@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@agent-spend-kit/sdk": ["./packages/sdk/src/index.ts"],
+      "@agent-spend-kit/server": ["./packages/server/src/index.ts"],
+      "@agent-spend-kit/server/*": ["./packages/server/src/*"]
+    }
+  },
+  "include": ["scripts/**/*.ts", "tests/**/*.ts", "vitest.config.ts", "drizzle.config.ts"]
+}
